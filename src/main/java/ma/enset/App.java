@@ -63,7 +63,7 @@ public class App {
             putStudent1.addColumn(Bytes.toBytes(CF_GRADES), Bytes.toBytes("math"), Bytes.toBytes("B"));
             putStudent1.addColumn(Bytes.toBytes(CF_GRADES), Bytes.toBytes("science"), Bytes.toBytes("A"));
             table.put(putStudent1);
-            System.out.println("Student 1 added !");
+            System.out.println("student 1 added");
 
             Put putStudent2 = new Put(Bytes.toBytes("student2"));
             putStudent2.addColumn(Bytes.toBytes(CF_INFO), Bytes.toBytes("name"), Bytes.toBytes("Jane Smith"));
@@ -71,12 +71,12 @@ public class App {
             putStudent2.addColumn(Bytes.toBytes(CF_GRADES), Bytes.toBytes("math"), Bytes.toBytes("A"));
             putStudent2.addColumn(Bytes.toBytes(CF_GRADES), Bytes.toBytes("science"), Bytes.toBytes("A"));
             table.put(putStudent2);
-            System.out.println("Student 2 added !");
+            System.out.println("student 2 added");
 
             // 3
             Get getStudent1 = new Get(Bytes.toBytes("student1"));
             Result resultStudent1 = table.get(getStudent1);
-            System.out.println("Information for Student 1:");
+            System.out.println("Information for Student 1");
             display(resultStudent1);
 
             // 4
@@ -84,7 +84,7 @@ public class App {
             putUpdateStudent2.addColumn(Bytes.toBytes(CF_INFO), Bytes.toBytes("age"), Bytes.toBytes("23"));
             putUpdateStudent2.addColumn(Bytes.toBytes(CF_GRADES), Bytes.toBytes("math"), Bytes.toBytes("A+"));
             table.put(putUpdateStudent2);
-            System.out.println("Information for Student 2 updated !");
+            System.out.println("information for Student 2 updated");
 
             // 5
             Delete deleteStudent1 = new Delete(Bytes.toBytes("student1"));
@@ -94,7 +94,7 @@ public class App {
             // 6
             Scan scan = new Scan();
             ResultScanner scanner = table.getScanner(scan);
-            System.out.println("All Students Information:");
+            System.out.println("All Students Information");
             for (Result result : scanner) {
                 display(result);
             }
@@ -102,7 +102,7 @@ public class App {
 
             admin.disableTable(tableName);
             admin.deleteTable(tableName);
-            System.out.println("The table has been deleted !");
+            System.out.println("The table has been deleted");
         } catch (IOException e) {
             e.printStackTrace();
         }
