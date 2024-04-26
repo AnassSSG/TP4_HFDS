@@ -49,9 +49,9 @@ public class App {
 
             if (!admin.tableExists(tableName)) {
                 admin.createTable(tableDescriptor);
-                System.out.println("Table created !");
+                System.out.println("Table created");
             } else {
-                System.err.println("Already exist !");
+                System.err.println("already exist");
             }
 
             Table table = connection.getTable(tableName);
@@ -89,7 +89,7 @@ public class App {
             // 5
             Delete deleteStudent1 = new Delete(Bytes.toBytes("student1"));
             table.delete(deleteStudent1);
-            System.out.println("Student 1 deleted !");
+            System.out.println("Student 1 deleted");
 
             // 6
             Scan scan = new Scan();
